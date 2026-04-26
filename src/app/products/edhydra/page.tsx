@@ -33,14 +33,14 @@ export default function EDHydraPage() {
           className="absolute inset-0 opacity-[0.025]"
           style={{
             backgroundImage:
-              "linear-gradient(#3B82F6 1px, transparent 1px), linear-gradient(to right, #3B82F6 1px, transparent 1px)",
+              "linear-gradient(#06B6D4 1px, transparent 1px), linear-gradient(to right, #06B6D4 1px, transparent 1px)",
             backgroundSize: "64px 64px",
           }}
         />
         <div
           aria-hidden="true"
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full opacity-[0.07] blur-3xl"
-          style={{ background: "radial-gradient(circle, #3B82F6, transparent)" }}
+          style={{ background: "radial-gradient(circle, #06B6D4, transparent)" }}
         />
 
         <div className="relative max-w-4xl mx-auto">
@@ -53,8 +53,8 @@ export default function EDHydraPage() {
             </Link>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6]/20 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#3B82F6]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#06B6D4]/10 border border-[#06B6D4]/20 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4]" />
             <span className="font-mono text-[10px] font-semibold tracking-[2px] uppercase text-[#22D3EE]">
               Now available for K–12 schools
             </span>
@@ -65,7 +65,7 @@ export default function EDHydraPage() {
           </h1>
           <p className="text-xl md:text-2xl font-medium mb-6"
             style={{
-              background: "linear-gradient(135deg, #60A5FA 0%, #22D3EE 100%)",
+              background: "linear-gradient(135deg, #06B6D4 0%, #22D3EE 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -82,7 +82,7 @@ export default function EDHydraPage() {
           <div className="flex flex-col sm:flex-row items-start gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-medium rounded-md transition-colors text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#06B6D4] hover:bg-[#0891B2] text-white font-medium rounded-md transition-colors text-sm"
             >
               Request a demo
               <ArrowRight size={16} />
@@ -234,8 +234,8 @@ export default function EDHydraPage() {
                 key={pillar.title}
                 className="bg-[#0D1625] border border-[#1A2D4A] rounded-xl p-6 hover:border-[#2A4570] transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#3B82F6]/10 flex items-center justify-center mb-5">
-                  <pillar.icon size={24} className="text-[#3B82F6]" />
+                <div className="w-12 h-12 rounded-xl bg-[#06B6D4]/10 flex items-center justify-center mb-5">
+                  <pillar.icon size={24} className="text-[#06B6D4]" />
                 </div>
                 <h3 className="text-[#F1F5F9] font-bold text-lg mb-3">
                   {pillar.title}
@@ -304,8 +304,8 @@ export default function EDHydraPage() {
             ].map((item) => (
               <div key={item.step} className="flex items-start gap-4">
                 <div className="shrink-0">
-                  <div className="w-10 h-10 rounded-full bg-[#3B82F6]/8 border border-[#3B82F6]/20 flex items-center justify-center">
-                    <item.icon size={18} className="text-[#3B82F6]" />
+                  <div className="w-10 h-10 rounded-full bg-[#06B6D4]/8 border border-[#06B6D4]/20 flex items-center justify-center">
+                    <item.icon size={18} className="text-[#06B6D4]" />
                   </div>
                 </div>
                 <div>
@@ -372,7 +372,7 @@ export default function EDHydraPage() {
           </div>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-medium rounded-md transition-colors text-sm"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#06B6D4] hover:bg-[#0891B2] text-white font-medium rounded-md transition-colors text-sm"
           >
             Contact us for pricing
             <ArrowRight size={16} />
@@ -385,6 +385,7 @@ export default function EDHydraPage() {
         subtext="Schedule a 30-minute walkthrough and see what your school could look like on day one."
         primaryCta={{ label: "Schedule a demo", href: "/contact" }}
         secondaryCta={{ label: "Join the waitlist", href: "/contact" }}
+        accent="teal"
       />
     </>
   );

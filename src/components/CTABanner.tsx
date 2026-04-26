@@ -6,6 +6,7 @@ interface CTABannerProps {
   subtext: string;
   primaryCta: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
+  accent?: "blue" | "teal";
 }
 
 export default function CTABanner({
@@ -13,7 +14,13 @@ export default function CTABanner({
   subtext,
   primaryCta,
   secondaryCta,
+  accent = "blue",
 }: CTABannerProps) {
+  const btnBg =
+    accent === "teal"
+      ? "bg-[#06B6D4] hover:bg-[#0891B2]"
+      : "bg-[#3B82F6] hover:bg-[#2563EB]";
+
   return (
     <section className="bg-[#080D1A] border-t border-[#1A2D4A] py-20 px-6">
       <div className="max-w-3xl mx-auto text-center">
@@ -24,7 +31,7 @@ export default function CTABanner({
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
             href={primaryCta.href}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-medium rounded-md transition-colors"
+            className={`inline-flex items-center gap-2 px-6 py-3 ${btnBg} text-white font-medium rounded-md transition-colors`}
           >
             {primaryCta.label}
             <ArrowRight size={16} />
