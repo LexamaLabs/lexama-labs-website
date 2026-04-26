@@ -21,8 +21,8 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center">
-        <div className="w-14 h-14 rounded-full bg-[#3B82F6]/10 flex items-center justify-center mb-4">
-          <CheckCircle size={28} className="text-[#3B82F6]" />
+        <div className="w-14 h-14 rounded-full bg-blue/10 flex items-center justify-center mb-4">
+          <CheckCircle size={28} className="text-blue" />
         </div>
         <h2 className="text-xl font-bold text-gray-900 mb-2">
           Message received.
@@ -51,7 +51,7 @@ export default function ContactForm() {
             type="text"
             required
             placeholder="Your full name"
-            className="w-full px-4 py-2.5 rounded-md border border-gray-200 bg-white text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/30 focus:border-[#3B82F6] transition-colors"
+            className="w-full px-4 py-2.5 rounded-md border border-gray-200 bg-white text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue/30 focus:border-blue transition-colors"
           />
         </div>
         <div>
@@ -67,7 +67,7 @@ export default function ContactForm() {
             type="email"
             required
             placeholder="you@organization.com"
-            className="w-full px-4 py-2.5 rounded-md border border-gray-200 bg-white text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/30 focus:border-[#3B82F6] transition-colors"
+            className="w-full px-4 py-2.5 rounded-md border border-gray-200 bg-white text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue/30 focus:border-blue transition-colors"
           />
         </div>
       </div>
@@ -83,7 +83,7 @@ export default function ContactForm() {
           <select
             id="org-type"
             name="org-type"
-            className="w-full px-4 py-2.5 rounded-md border border-gray-200 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/30 focus:border-[#3B82F6] transition-colors"
+            className="w-full px-4 py-2.5 rounded-md border border-gray-200 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue/30 focus:border-blue transition-colors"
           >
             <option value="">Select one</option>
             <option value="k12-school">K–12 School</option>
@@ -105,7 +105,7 @@ export default function ContactForm() {
             name="role"
             type="text"
             placeholder="e.g. Principal, Administrator"
-            className="w-full px-4 py-2.5 rounded-md border border-gray-200 bg-white text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/30 focus:border-[#3B82F6] transition-colors"
+            className="w-full px-4 py-2.5 rounded-md border border-gray-200 bg-white text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue/30 focus:border-blue transition-colors"
           />
         </div>
       </div>
@@ -120,7 +120,7 @@ export default function ContactForm() {
         <select
           id="reason"
           name="reason"
-          className="w-full px-4 py-2.5 rounded-md border border-gray-200 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/30 focus:border-[#3B82F6] transition-colors"
+          className="w-full px-4 py-2.5 rounded-md border border-gray-200 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue/30 focus:border-blue transition-colors"
         >
           <option value="">Select one</option>
           <option value="demo">Request a demo</option>
@@ -144,14 +144,14 @@ export default function ContactForm() {
           rows={5}
           required
           placeholder="Tell us about your organization and what you're trying to solve..."
-          className="w-full px-4 py-2.5 rounded-md border border-gray-200 bg-white text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3B82F6]/30 focus:border-[#3B82F6] transition-colors resize-none"
+          className="w-full px-4 py-2.5 rounded-md border border-gray-200 bg-white text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue/30 focus:border-blue transition-colors resize-none"
         />
       </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="inline-flex items-center gap-2 px-6 py-3 bg-[#3B82F6] hover:bg-[#2563EB] disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium rounded-md transition-colors text-sm"
+        className="inline-flex items-center gap-2 px-6 py-3 bg-blue hover:bg-blue-dark disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium rounded-md transition-colors text-sm"
       >
         {loading ? (
           <>

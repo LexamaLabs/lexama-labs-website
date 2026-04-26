@@ -27,53 +27,40 @@ export default function EDHydraPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#080D1A] py-24 md:py-32 px-6 relative overflow-hidden">
+      <section className="bg-navy py-24 md:py-32 px-6 relative overflow-hidden">
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-[0.025]"
-          style={{
-            backgroundImage:
-              "linear-gradient(#06B6D4 1px, transparent 1px), linear-gradient(to right, #06B6D4 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
+          className="absolute inset-0 opacity-[0.025] bg-grid-pattern text-cyan"
         />
         <div
           aria-hidden="true"
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full opacity-[0.07] blur-3xl"
-          style={{ background: "radial-gradient(circle, #06B6D4, transparent)" }}
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full opacity-[0.07] blur-3xl bg-radial-glow text-cyan"
         />
 
         <div className="relative max-w-4xl mx-auto">
           <div className="mb-5">
             <Link
               href="/"
-              className="font-mono text-[11px] tracking-[2px] uppercase text-[#64748B] hover:text-[#94A3B8] transition-colors"
+              className="font-mono text-[11px] tracking-[2px] uppercase text-fg-subtle hover:text-fg-muted transition-colors"
             >
               ← Lexama Labs
             </Link>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#06B6D4]/10 border border-[#06B6D4]/20 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4]" />
-            <span className="font-mono text-[10px] font-semibold tracking-[2px] uppercase text-[#22D3EE]">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan/10 border border-cyan/20 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan" />
+            <span className="font-mono text-[10px] font-semibold tracking-[2px] uppercase text-teal">
               Now available for K–12 schools
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-[#F1F5F9] leading-tight tracking-tight mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-fg leading-tight tracking-tight mb-4">
             EDHydra
           </h1>
-          <p className="text-xl md:text-2xl font-medium mb-6"
-            style={{
-              background: "linear-gradient(135deg, #06B6D4 0%, #22D3EE 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
+          <p className="text-xl md:text-2xl font-medium mb-6 text-gradient-edhydra">
             Operations software for K–12 schools
           </p>
-          <p className="text-[#94A3B8] text-lg max-w-2xl leading-relaxed mb-10">
+          <p className="text-fg-muted text-lg max-w-2xl leading-relaxed mb-10">
             One platform to manage your people, collect payments, and
             communicate with families. No more juggling spreadsheets, payment
             apps, and email threads.
@@ -82,36 +69,36 @@ export default function EDHydraPage() {
           <div className="flex flex-col sm:flex-row items-start gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#06B6D4] hover:bg-[#0891B2] text-white font-medium rounded-md transition-colors text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-cyan hover:bg-cyan-dark text-white font-medium rounded-md transition-colors text-sm"
             >
               Request a demo
               <ArrowRight size={16} />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-[#1A2D4A] hover:border-[#2A4570] text-[#94A3B8] hover:text-[#F1F5F9] font-medium rounded-md transition-colors text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-edge hover:border-edge-hover text-fg-muted hover:text-fg font-medium rounded-md transition-colors text-sm"
             >
               Join the waitlist
             </Link>
           </div>
 
           {/* Mock UI frame */}
-          <div className="mt-16 rounded-xl border border-[#1A2D4A] bg-[#0D1625] overflow-hidden shadow-2xl">
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-[#1A2D4A] bg-[#080D1A]">
+          <div className="mt-16 rounded-xl border border-edge bg-surface overflow-hidden shadow-2xl">
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-edge bg-navy">
               <div className="w-3 h-3 rounded-full bg-red-500/50" />
               <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
               <div className="w-3 h-3 rounded-full bg-green-500/50" />
-              <div className="ml-4 flex-1 bg-[#1A2D4A] rounded px-3 py-1">
-                <span className="font-mono text-[10px] text-[#64748B] tracking-[1px]">
+              <div className="ml-4 flex-1 bg-edge rounded px-3 py-1">
+                <span className="font-mono text-[10px] text-fg-subtle tracking-[1px]">
                   app.edhydra.io — your school
                 </span>
               </div>
             </div>
             <div className="p-6 text-center py-16">
-              <p className="font-mono text-[11px] tracking-[2px] uppercase text-[#64748B]">
+              <p className="font-mono text-[11px] tracking-[2px] uppercase text-fg-subtle">
                 [PLACEHOLDER — product screenshot or UI mockup]
               </p>
-              <p className="font-mono text-[10px] text-[#1A2D4A] mt-2 tracking-[1px]">
+              <p className="font-mono text-[10px] text-edge mt-2 tracking-[1px]">
                 Dashboard preview coming soon
               </p>
             </div>
@@ -172,14 +159,14 @@ export default function EDHydraPage() {
       </section>
 
       {/* Three pillars */}
-      <section className="py-20 px-6 bg-[#080D1A]">
+      <section className="py-20 px-6 bg-navy">
         <div className="max-w-5xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <Eyebrow>What EDHydra does</Eyebrow>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#F1F5F9] mb-4 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-fg mb-4 leading-tight">
               Three pillars. One platform.
             </h2>
-            <p className="text-[#94A3B8] text-lg leading-relaxed">
+            <p className="text-fg-muted text-lg leading-relaxed">
               Every school has the same three operational needs. EDHydra covers
               all of them — deeply, not superficially.
             </p>
@@ -189,7 +176,6 @@ export default function EDHydraPage() {
             {[
               {
                 icon: Users,
-                accentColor: "#3B82F6",
                 title: "People & Relationships",
                 description:
                   "Every person in your organization — students, guardians, personnel — organized, documented, and always accessible.",
@@ -203,7 +189,6 @@ export default function EDHydraPage() {
               },
               {
                 icon: CreditCard,
-                accentColor: "#06B6D4",
                 title: "Payments",
                 description:
                   "Collect tuition, fees, and charges online. Automate reminders. Keep a full history of every transaction.",
@@ -217,7 +202,6 @@ export default function EDHydraPage() {
               },
               {
                 icon: MessageSquare,
-                accentColor: "#60A5FA",
                 title: "Communications",
                 description:
                   "Reach families where they are. Send announcements, respond to messages, and know who actually read what.",
@@ -232,26 +216,26 @@ export default function EDHydraPage() {
             ].map((pillar) => (
               <div
                 key={pillar.title}
-                className="bg-[#0D1625] border border-[#1A2D4A] rounded-xl p-6 hover:border-[#2A4570] transition-all"
+                className="bg-surface border border-edge rounded-xl p-6 hover:border-edge-hover transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#06B6D4]/10 flex items-center justify-center mb-5">
-                  <pillar.icon size={24} className="text-[#06B6D4]" />
+                <div className="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center mb-5">
+                  <pillar.icon size={24} className="text-cyan" />
                 </div>
-                <h3 className="text-[#F1F5F9] font-bold text-lg mb-3">
+                <h3 className="text-fg font-bold text-lg mb-3">
                   {pillar.title}
                 </h3>
-                <p className="text-[#94A3B8] text-sm leading-relaxed mb-4">
+                <p className="text-fg-muted text-sm leading-relaxed mb-4">
                   {pillar.description}
                 </p>
                 <ul className="space-y-2">
                   {pillar.features.map((f) => (
                     <li
                       key={f}
-                      className="flex items-start gap-2 text-xs text-[#64748B]"
+                      className="flex items-start gap-2 text-xs text-fg-subtle"
                     >
                       <CheckCircle
                         size={13}
-                        className="text-[#22D3EE] mt-0.5 shrink-0"
+                        className="text-teal mt-0.5 shrink-0"
                       />
                       {f}
                     </li>
@@ -304,12 +288,12 @@ export default function EDHydraPage() {
             ].map((item) => (
               <div key={item.step} className="flex items-start gap-4">
                 <div className="shrink-0">
-                  <div className="w-10 h-10 rounded-full bg-[#06B6D4]/8 border border-[#06B6D4]/20 flex items-center justify-center">
-                    <item.icon size={18} className="text-[#06B6D4]" />
+                  <div className="w-10 h-10 rounded-full bg-cyan/8 border border-cyan/20 flex items-center justify-center">
+                    <item.icon size={18} className="text-cyan" />
                   </div>
                 </div>
                 <div>
-                  <p className="font-mono text-[10px] font-semibold tracking-[2px] uppercase text-[#22D3EE] mb-1">
+                  <p className="font-mono text-[10px] font-semibold tracking-[2px] uppercase text-teal mb-1">
                     Step {item.step}
                   </p>
                   <h3 className="text-gray-900 font-semibold mb-2">
@@ -326,15 +310,15 @@ export default function EDHydraPage() {
       </section>
 
       {/* Security note */}
-      <section className="py-12 px-6 bg-[#080D1A] border-y border-[#1A2D4A]">
+      <section className="py-12 px-6 bg-navy border-y border-edge">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-4">
-          <ShieldCheck size={22} className="text-[#22D3EE] shrink-0" />
-          <p className="text-[#94A3B8] text-sm leading-relaxed">
-            <strong className="text-[#F1F5F9]">Built with compliance in mind.</strong>{" "}
+          <ShieldCheck size={22} className="text-teal shrink-0" />
+          <p className="text-fg-muted text-sm leading-relaxed">
+            <strong className="text-fg">Built with compliance in mind.</strong>{" "}
             EDHydra is designed to help schools maintain organized, auditable
             records. Student data is stored securely and access is
             role-controlled.{" "}
-            <span className="text-[#64748B]">
+            <span className="text-fg-subtle">
               [PLACEHOLDER — add specific compliance certifications when available]
             </span>
           </p>
@@ -352,18 +336,18 @@ export default function EDHydraPage() {
             We&apos;re in early access. Reach out to get pricing for your
             school.
           </p>
-          <div className="bg-[#080D1A] rounded-xl p-8 border border-[#1A2D4A] text-left mb-6">
-            <p className="font-mono text-[10px] tracking-[2px] uppercase text-[#64748B] text-center mb-6">
+          <div className="bg-navy rounded-xl p-8 border border-edge text-left mb-6">
+            <p className="font-mono text-[10px] tracking-[2px] uppercase text-fg-subtle text-center mb-6">
               [PLACEHOLDER — pricing tiers will be added here]
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
               {["Starter", "Growth", "Enterprise"].map((tier) => (
                 <div
                   key={tier}
-                  className="bg-[#0D1625] border border-[#1A2D4A] rounded-lg p-5 hover:border-[#2A4570] transition-all"
+                  className="bg-surface border border-edge rounded-lg p-5 hover:border-edge-hover transition-all"
                 >
-                  <p className="text-[#F1F5F9] font-semibold mb-1">{tier}</p>
-                  <p className="text-[#64748B] text-xs">
+                  <p className="text-fg font-semibold mb-1">{tier}</p>
+                  <p className="text-fg-subtle text-xs">
                     [PLACEHOLDER — pricing details]
                   </p>
                 </div>
@@ -372,7 +356,7 @@ export default function EDHydraPage() {
           </div>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#06B6D4] hover:bg-[#0891B2] text-white font-medium rounded-md transition-colors text-sm"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-cyan hover:bg-cyan-dark text-white font-medium rounded-md transition-colors text-sm"
           >
             Contact us for pricing
             <ArrowRight size={16} />

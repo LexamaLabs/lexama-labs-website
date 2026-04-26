@@ -1,35 +1,51 @@
 @import "tailwindcss";
 
+/* ─── Brand tokens (single source of truth) ──────────────────────
+   See README.md "Brand — Design tokens" for the full reference.
+*/
 :root {
-  /* Brand colors — from brand guidelines v1.0 */
+  /* Surfaces */
   --navy:       #080D1A;
   --surface:    #0D1625;
   --card:       #111C32;
+
+  /* Borders */
   --edge:       #1A2D4A;
   --edge-hover: #2A4570;
 
+  /* Accents */
   --blue:       #3B82F6;
   --blue-dark:  #2563EB;
   --cyan:       #06B6D4;
+  --cyan-dark:  #0891B2;
   --sky:        #60A5FA;
   --teal:       #22D3EE;
 
-  --text-primary:   #F1F5F9;
-  --text-secondary: #94A3B8;
-  --text-tertiary:  #64748B;
+  /* Foreground (text on dark surfaces) */
+  --fg:         #F1F5F9;
+  --fg-muted:   #94A3B8;
+  --fg-subtle:  #64748B;
 }
 
+/* Register tokens with Tailwind so utilities like bg-navy, text-fg, border-edge are generated */
 @theme inline {
   --color-navy:       var(--navy);
   --color-surface:    var(--surface);
   --color-card:       var(--card);
   --color-edge:       var(--edge);
   --color-edge-hover: var(--edge-hover);
+
   --color-blue:       var(--blue);
   --color-blue-dark:  var(--blue-dark);
   --color-cyan:       var(--cyan);
+  --color-cyan-dark:  var(--cyan-dark);
   --color-sky:        var(--sky);
   --color-teal:       var(--teal);
+
+  --color-fg:         var(--fg);
+  --color-fg-muted:   var(--fg-muted);
+  --color-fg-subtle:  var(--fg-subtle);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-jetbrains-mono);
 }
@@ -44,4 +60,35 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #ffffff;
   color: #111827;
+}
+
+/* ─── Custom utilities ─────────────────────────────────────────── */
+
+/* Brand gradient text — Lexama Labs (sky → teal) */
+.text-gradient-brand {
+  background: linear-gradient(135deg, var(--sky) 0%, var(--teal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Product gradient text — EDHydra (cyan → teal) */
+.text-gradient-edhydra {
+  background: linear-gradient(135deg, var(--cyan) 0%, var(--teal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero grid pattern — color via currentColor (set with text-* utility) */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(currentColor 1px, transparent 1px),
+    linear-gradient(to right, currentColor 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Radial glow background — color via currentColor */
+.bg-radial-glow {
+  background: radial-gradient(circle, currentColor, transparent);
 }

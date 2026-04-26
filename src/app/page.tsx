@@ -20,50 +20,36 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#080D1A] py-24 md:py-32 px-6 relative overflow-hidden">
+      <section className="bg-navy py-24 md:py-32 px-6 relative overflow-hidden">
         <div
           aria-hidden="true"
-          className="absolute inset-0 opacity-[0.025]"
-          style={{
-            backgroundImage:
-              "linear-gradient(#3B82F6 1px, transparent 1px), linear-gradient(to right, #3B82F6 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-          }}
+          className="absolute inset-0 opacity-[0.025] bg-grid-pattern text-blue"
         />
         <div
           aria-hidden="true"
-          className="absolute top-0 left-1/4 w-[600px] h-[400px] rounded-full opacity-[0.08] blur-3xl"
-          style={{ background: "radial-gradient(circle, #3B82F6, transparent)" }}
+          className="absolute top-0 left-1/4 w-[600px] h-[400px] rounded-full opacity-[0.08] blur-3xl bg-radial-glow text-blue"
         />
         <div
           aria-hidden="true"
-          className="absolute top-0 right-1/4 w-[400px] h-[300px] rounded-full opacity-[0.06] blur-3xl"
-          style={{ background: "radial-gradient(circle, #06B6D4, transparent)" }}
+          className="absolute top-0 right-1/4 w-[400px] h-[300px] rounded-full opacity-[0.06] blur-3xl bg-radial-glow text-cyan"
         />
 
         <div className="relative max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#3B82F6]/10 border border-[#3B82F6]/20 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#22D3EE] animate-pulse" />
-            <span className="font-mono text-[10px] font-semibold tracking-[2px] uppercase text-[#22D3EE]">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue/10 border border-blue/20 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse" />
+            <span className="font-mono text-[10px] font-semibold tracking-[2px] uppercase text-teal">
               Now onboarding K–12 schools — EDHydra
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold text-[#F1F5F9] leading-tight tracking-tight mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-fg leading-tight tracking-tight mb-6">
             We modernize the operations of organizations{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #60A5FA 0%, #22D3EE 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
+            <span className="text-gradient-brand">
               that keep the world running.
             </span>
           </h1>
 
-          <p className="text-[#94A3B8] text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-fg-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
             Schools, clinics, nonprofits, and community organizations do
             critical work — and they deserve software that actually fits how
             they operate.
@@ -72,14 +58,14 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/products/edhydra"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-medium rounded-md transition-colors text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue hover:bg-blue-dark text-white font-medium rounded-md transition-colors text-sm"
             >
               See our products
               <ArrowRight size={16} />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-[#1A2D4A] hover:border-[#2A4570] text-[#94A3B8] hover:text-[#F1F5F9] font-medium rounded-md transition-colors text-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-edge hover:border-edge-hover text-fg-muted hover:text-fg font-medium rounded-md transition-colors text-sm"
             >
               Talk to us
             </Link>
@@ -138,14 +124,14 @@ export default function Home() {
       </section>
 
       {/* What we build */}
-      <section className="py-20 px-6 bg-[#080D1A]">
+      <section className="py-20 px-6 bg-navy">
         <div className="max-w-5xl mx-auto">
           <div className="max-w-2xl mb-12">
             <Eyebrow>Our approach</Eyebrow>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#F1F5F9] mb-4 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-fg mb-4 leading-tight">
               Purpose-built. Not generic.
             </h2>
-            <p className="text-[#94A3B8] text-lg leading-relaxed">
+            <p className="text-fg-muted text-lg leading-relaxed">
               We don&apos;t sell platforms you configure yourself. We go deep on
               one type of organization at a time — understanding their
               workflows, roles, and needs — and build software that fits from
@@ -191,8 +177,8 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             <div className="flex-1">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#3B82F6]/8 border border-[#3B82F6]/20 mb-4">
-                <span className="font-mono text-[10px] font-semibold tracking-[2px] uppercase text-[#3B82F6]">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue/8 border border-blue/20 mb-4">
+                <span className="font-mono text-[10px] font-semibold tracking-[2px] uppercase text-blue">
                   Flagship product
                 </span>
               </div>
@@ -205,7 +191,7 @@ export default function Home() {
               </p>
               <Link
                 href="/products/edhydra"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-medium rounded-md transition-colors text-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue hover:bg-blue-dark text-white font-medium rounded-md transition-colors text-sm"
               >
                 Learn more about EDHydra
                 <ArrowRight size={15} />
@@ -246,14 +232,14 @@ export default function Home() {
       </section>
 
       {/* Where we're going */}
-      <section className="py-20 px-6 bg-[#080D1A]">
+      <section className="py-20 px-6 bg-navy">
         <div className="max-w-5xl mx-auto">
           <div className="max-w-2xl mb-12">
             <Eyebrow>Roadmap</Eyebrow>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#F1F5F9] mb-4 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-fg mb-4 leading-tight">
               Education is the first vertical. Not the last.
             </h2>
-            <p className="text-[#94A3B8] text-lg leading-relaxed">
+            <p className="text-fg-muted text-lg leading-relaxed">
               We&apos;re building the same model — integrated, purpose-built
               operations software — for every organization type that&apos;s
               been underserved by modern software.

@@ -13,18 +13,17 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#080D1A] py-24 md:py-32 px-6 relative overflow-hidden">
+      <section className="bg-navy py-24 md:py-32 px-6 relative overflow-hidden">
         <div
           aria-hidden="true"
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full opacity-[0.06] blur-3xl"
-          style={{ background: "radial-gradient(circle, #3B82F6, transparent)" }}
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full opacity-[0.06] blur-3xl bg-radial-glow text-blue"
         />
         <div className="relative max-w-3xl mx-auto">
           <Eyebrow>Contact</Eyebrow>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#F1F5F9] leading-tight tracking-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-fg leading-tight tracking-tight mb-6">
             Let&apos;s talk.
           </h1>
-          <p className="text-[#94A3B8] text-xl leading-relaxed max-w-xl">
+          <p className="text-fg-muted text-xl leading-relaxed max-w-xl">
             Whether you want to see EDHydra in action, ask about pricing, or
             tell us about the organization you&apos;re trying to modernize —
             we want to hear from you.
@@ -42,7 +41,7 @@ export default function ContactPage() {
             </h2>
             <a
               href="mailto:hello@lexama.io"
-              className="flex items-center gap-2 text-sm text-[#3B82F6] hover:text-[#2563EB] transition-colors mb-6"
+              className="flex items-center gap-2 text-sm text-blue hover:text-blue-dark transition-colors mb-6"
             >
               <Mail size={15} />
               hello@lexama.io
