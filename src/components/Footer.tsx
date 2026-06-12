@@ -61,19 +61,19 @@ export default function Footer() {
             </a>
             <div className="flex items-center gap-3">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/iamcarloslezama/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn [PLACEHOLDER — update href]"
+                aria-label="Lexama Labs on LinkedIn"
                 className="text-fg-subtle hover:text-fg transition-colors"
               >
                 <Link2 size={17} />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/iamlezama"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="GitHub [PLACEHOLDER — update href]"
+                aria-label="Lexama Labs on GitHub"
                 className="text-fg-subtle hover:text-fg transition-colors"
               >
                 <GitFork size={17} />

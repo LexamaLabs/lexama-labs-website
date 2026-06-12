@@ -79,13 +79,19 @@ export default function ContactPage() {
               ))}
             </div>
 
-            {/* Calendly placeholder */}
+            {/*
+              SCHEDULING — Calendly is not live yet.
+              TODO (Carlos): drop your Calendly link in below. Either replace this
+              block with the Calendly inline-widget embed, or turn the wrapper into
+              an <a href="https://calendly.com/your-handle"> button.
+            */}
             <div className="mt-8 border border-dashed border-gray-200 rounded-xl p-6 text-center">
               <p className="font-mono text-[10px] tracking-[2px] uppercase text-gray-400 font-medium mb-1">
-                [PLACEHOLDER — Calendly embed]
+                Scheduling — coming soon
               </p>
               <p className="text-gray-400 text-xs">
-                Prefer to pick a time directly? Add a scheduling link here.
+                Self-serve booking is on the way. For now, send a message and
+                we&apos;ll find a time that works within one business day.
               </p>
             </div>
           </div>

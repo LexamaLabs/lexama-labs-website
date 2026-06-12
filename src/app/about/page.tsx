@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Eye, Cpu, Users, Layers } from "lucide-react";
+import { Eye, Cpu, Users, Layers, Bot, Sparkles } from "lucide-react";
 import CTABanner from "@/components/CTABanner";
 import Eyebrow from "@/components/Eyebrow";
 
@@ -68,25 +68,49 @@ export default function AboutPage() {
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[2px] text-blue-dark mb-4">
               A note from the founder
             </p>
-            {/* [FOUNDER_NOTE] — replace the block below with a personal, first-person message */}
             <div className="space-y-4 text-gray-600 leading-relaxed">
               <p>
-                [FOUNDER_NOTE — Write a short, authentic message here. 2–3 paragraphs
-                about why you started Lexama Labs, what you&apos;ve observed
-                firsthand, and what you believe. First-person, direct, no
-                corporate language.]
+                I come from math and physics — dual degree from UPR Río Piedras,
+                seven-time top placer in Puerto Rico&apos;s Calculus Olympics,
+                Blaise Pascal Medal. That background taught me to think from
+                first principles: break down any problem to its core and build
+                back up from there. Years later, I&apos;m still doing exactly
+                that — first as a teacher, then as a quantitative analyst, and
+                now as a founder.
+              </p>
+              <p>
+                What I saw over and over was that the organizations doing the
+                most important work — schools, clinics, churches, community
+                groups — were running on tools never built for them. They&apos;d
+                patch together spreadsheets and group chats and just accept
+                that this was as good as it gets. I never accepted that.
+              </p>
+              <p>
+                Lexama Labs is my answer. The name comes from my own last name —
+                this is personal. I still work as a Senior Quantitative Analyst
+                at Popular, building behavioral models across millions of
+                transactions, and every evening and weekend I pour that same
+                analytical rigor into shipping software that actually fits the
+                way these organizations work. Great UX isn&apos;t a luxury for
+                them — it&apos;s the difference between software that gets used
+                and software that gets abandoned. That conviction is in
+                everything we ship.
               </p>
             </div>
             <div className="mt-6 pt-6 border-t border-gray-100 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-blue/10 flex items-center justify-center text-blue font-bold text-sm">
-                F
+              <div className="w-12 h-12 rounded-full overflow-hidden bg-blue/10">
+                <img
+                  src="/images/team/lezama_profile_picture.png"
+                  alt="Carlos Lezama"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <p className="text-gray-900 font-semibold text-sm">
-                  [Founder Name]
+                  Carlos Lezama
                 </p>
                 <p className="text-gray-500 text-xs">
-                  Founder & CEO, Lexama Labs
+                  Founder &amp; CEO, Lexama Labs
                 </p>
               </div>
             </div>
@@ -161,23 +185,66 @@ export default function AboutPage() {
               The people building Lexama Labs
             </h2>
             <p className="text-gray-500 text-lg">
-              [PLACEHOLDER — team bios and photos will be added here]
+              A solo founder with an AI team that punches far above its
+              headcount — human judgment, paired with agents that handle the
+              heavy lifting.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {[1, 2, 3].map((i) => (
+            {[
+              {
+                name: "Carlos Lezama",
+                role: "Founder & CEO",
+                bio: "Senior Quantitative Analyst at Popular and founder of Lexama Labs. MSc in Financial Engineering (4.0 GPA), degree in Math & Physics from UPR. Seven-time Calculus Olympiad winner. He builds software that actually works for schools, clinics, and community organizations — because he's been on their side of the table his whole career.",
+                monogram: "CL",
+                accent: "human" as const,
+              },
+              {
+                name: "Hermes",
+                role: "AI Orchestrator",
+                bio: "The one who keeps everything moving — client communication, research, automations, and daily operations. Built to handle the conversations, the schedules, and the small fires before they become big ones. Reliable, adaptable, and always on.",
+                icon: Bot,
+                accent: "ai" as const,
+              },
+              {
+                name: "Claude",
+                role: "AI Engineering Partner",
+                bio: "The deep thinker — architecture, complex features, refactoring, and code review at scale. When a problem needs real engineering depth, Claude is the one who takes it apart and builds it back right. Patient, thorough, and relentless about quality.",
+                icon: Sparkles,
+                accent: "ai" as const,
+              },
+            ].map((member) => (
               <div
-                key={i}
-                className="bg-gray-50 border border-gray-100 rounded-xl p-6"
+                key={member.name}
+                className="bg-gray-50 border border-gray-100 rounded-xl p-6 hover:border-gray-200 transition-colors"
               >
-                <div className="w-14 h-14 rounded-xl bg-blue/8 border border-blue/15 mb-4 flex items-center justify-center">
-                  <span className="text-blue text-lg font-bold">?</span>
+                <div className="w-16 h-16 rounded-full mb-4 overflow-hidden bg-gray-100">
+                  <img
+                    src={
+                      member.name === "Carlos Lezama"
+                        ? "/images/team/lezama_profile_picture.png"
+                        : member.name === "Hermes"
+                        ? "/images/team/hermes_profile_picture.jpg"
+                        : "/images/team/claude_profile_picture.png"
+                    }
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <p className="text-gray-700 text-sm font-medium mb-1">
-                  [Team Member {i}]
+                <p className="text-gray-900 text-sm font-semibold mb-0.5">
+                  {member.name}
                 </p>
-                <p className="text-gray-500 text-xs">[Role] — [PLACEHOLDER]</p>
+                <p
+                  className={`text-xs font-medium mb-3 ${
+                    member.accent === "ai" ? "text-cyan-dark" : "text-blue-dark"
+                  }`}
+                >
+                  {member.role}
+                </p>
+                <p className="text-gray-500 text-xs leading-relaxed">
+                  {member.bio}
+                </p>
               </div>
             ))}
           </div>

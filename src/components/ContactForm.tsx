@@ -4,18 +4,62 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Send, CheckCircle } from "lucide-react";
 
+// TODO (Carlos): replace this with your real Formspree form ID (or swap the
+// whole handler for a Resend/serverless endpoint). Create a free form at
+// https://formspree.io and paste the ID below. Until then, submissions fall
+// back to opening the visitor's email client (mailto) so nothing is lost.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id";
+const CONTACT_EMAIL = "hello@lexama.io";
+
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    // [PLACEHOLDER — wire up to your form handler (Formspree, Resend, etc.)]
-    setTimeout(() => {
+    setError(null);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    // Mailto fallback while the Formspree endpoint is still a placeholder.
+    if (FORMSPREE_ENDPOINT.includes("your-form-id")) {
+      const subject = `Lexama Labs inquiry — ${data.get("reason") || "General"}`;
+      const body = [
+        `Name: ${data.get("name") || ""}`,
+        `Email: ${data.get("email") || ""}`,
+        `Organization type: ${data.get("org-type") || ""}`,
+        `Role: ${data.get("role") || ""}`,
+        `Reason: ${data.get("reason") || ""}`,
+        "",
+        `${data.get("message") || ""}`,
+      ].join("\n");
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
       setLoading(false);
       setSubmitted(true);
-    }, 800);
+      return;
+    }
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error("Request failed");
+      form.reset();
+      setSubmitted(true);
+    } catch {
+      setError(
+        `Something went wrong sending your message. Please email us directly at ${CONTACT_EMAIL}.`
+      );
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
@@ -166,8 +210,15 @@ export default function ContactForm() {
         )}
       </button>
 
+      {error && (
+        <p className="text-xs text-red-500" role="alert">
+          {error}
+        </p>
+      )}
+
       <p className="text-xs text-gray-400">
-        [PLACEHOLDER — add privacy policy link and form handler before going live]
+        We&apos;ll only use your details to respond to your inquiry. We never
+        share or sell your information.
       </p>
     </form>
   );

@@ -94,12 +94,26 @@ export default function EDHydraPage() {
                 </span>
               </div>
             </div>
+            {/*
+              ╔═══════════════════════════════════════════════════════════════╗
+              ║  EDHYDRA SCREENSHOT SLOT — swap this block for a real image.   ║
+              ║  Hermes will capture the live EDHydra dashboard and drop it    ║
+              ║  here. To wire it up:                                          ║
+              ║    1. Add the file to /public (e.g. edhydra-dashboard.png)     ║
+              ║    2. import Image from "next/image"                           ║
+              ║    3. Replace the <div> below with:                            ║
+              ║       <Image src="/edhydra-dashboard.png"                      ║
+              ║              alt="EDHydra dashboard"                           ║
+              ║              width={1280} height={800}                         ║
+              ║              className="w-full h-auto" />                      ║
+              ╚═══════════════════════════════════════════════════════════════╝
+            */}
             <div className="p-6 text-center py-16">
               <p className="font-mono text-[11px] tracking-[2px] uppercase text-fg-subtle">
-                [PLACEHOLDER — product screenshot or UI mockup]
+                Dashboard preview
               </p>
               <p className="font-mono text-[10px] text-edge mt-2 tracking-[1px]">
-                Dashboard preview coming soon
+                Live product screenshots coming soon
               </p>
             </div>
           </div>
@@ -309,17 +323,22 @@ export default function EDHydraPage() {
         </div>
       </section>
 
-      {/* Security note */}
+      {/* Architecture & security note */}
       <section className="py-12 px-6 bg-navy border-y border-edge">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-4">
-          <ShieldCheck size={22} className="text-teal shrink-0" />
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start gap-4">
+          <ShieldCheck size={22} className="text-teal shrink-0 mt-0.5" />
           <p className="text-fg-muted text-sm leading-relaxed">
-            <strong className="text-fg">Built with compliance in mind.</strong>{" "}
-            EDHydra is designed to help schools maintain organized, auditable
-            records. Student data is stored securely and access is
-            role-controlled.{" "}
+            <strong className="text-fg">
+              Multi-tenant by design, secure by default.
+            </strong>{" "}
+            EDHydra is built on Django with django-tenants, giving every school
+            its own isolated PostgreSQL schema — your data never lives in the
+            same table as another school&apos;s. Records are organized and
+            auditable, and access is role-controlled. Built for Puerto Rico
+            schools first, and ready for any K–12 organization across the US and
+            Latin America.{" "}
             <span className="text-fg-subtle">
-              [PLACEHOLDER — add specific compliance certifications when available]
+              {/* TODO (Carlos): add specific compliance certifications (e.g. FERPA) once formalized. */}
             </span>
           </p>
         </div>
@@ -336,19 +355,34 @@ export default function EDHydraPage() {
             We&apos;re in early access. Reach out to get pricing for your
             school.
           </p>
+          {/* TODO (Carlos): finalize pricing tiers and numbers, then replace the
+              descriptions below with real plan details. */}
           <div className="bg-navy rounded-xl p-8 border border-edge text-left mb-6">
             <p className="font-mono text-[10px] tracking-[2px] uppercase text-fg-subtle text-center mb-6">
-              [PLACEHOLDER — pricing tiers will be added here]
+              Early-access pricing — tailored to your school
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-              {["Starter", "Growth", "Enterprise"].map((tier) => (
+              {[
+                {
+                  tier: "Starter",
+                  desc: "For small schools getting their people and payments online.",
+                },
+                {
+                  tier: "Growth",
+                  desc: "For established schools running full operations on EDHydra.",
+                },
+                {
+                  tier: "Enterprise",
+                  desc: "For multi-campus schools and networks with custom needs.",
+                },
+              ].map(({ tier, desc }) => (
                 <div
                   key={tier}
                   className="bg-surface border border-edge rounded-lg p-5 hover:border-edge-hover transition-all"
                 >
                   <p className="text-fg font-semibold mb-1">{tier}</p>
-                  <p className="text-fg-subtle text-xs">
-                    [PLACEHOLDER — pricing details]
+                  <p className="text-fg-subtle text-xs leading-relaxed">
+                    {desc}
                   </p>
                 </div>
               ))}

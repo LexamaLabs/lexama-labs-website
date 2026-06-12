@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import FeatureCard from "@/components/FeatureCard";
 import CTABanner from "@/components/CTABanner";
-import TestimonialPlaceholder from "@/components/TestimonialPlaceholder";
 import VerticalRoadmapCard from "@/components/VerticalRoadmapCard";
 import Eyebrow from "@/components/Eyebrow";
 
@@ -276,53 +275,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social proof placeholder */}
+      {/* Where we started */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="font-mono text-[10px] text-gray-400 tracking-[2px] uppercase">
-              [PLACEHOLDER — update once organizations are live]
-            </span>
-            <p className="text-3xl font-bold text-gray-900 mt-2 mb-2">
-              Trusted by organizations doing real work
+          <div className="max-w-2xl mb-12">
+            <Eyebrow light>Where we started</Eyebrow>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+              Built in Puerto Rico. For organizations everywhere.
+            </h2>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Lexama Labs began in Puerto Rico, working hands-on with the
+              schools, churches, and clinics in our own community. That&apos;s
+              where we learned what these organizations actually need — and
+              we&apos;re bringing it to operators across the US and Latin
+              America.
             </p>
-            <p className="text-gray-500">
-              Early adopters are replacing spreadsheets and paper with EDHydra.
+            <p className="text-gray-400 text-sm mt-3 italic">
+              Servimos a organizaciones en Estados Unidos y Latinoamérica.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <TestimonialPlaceholder
-              quote="[PLACEHOLDER] Before EDHydra, enrollment took us two weeks of paperwork. Now it's done in an afternoon."
-              name="[Name]"
-              role="Office Administrator"
-              org="[School Name]"
-            />
-            <TestimonialPlaceholder
-              quote="[PLACEHOLDER] We finally have a single place where we can see every student, every payment, every message."
-              name="[Name]"
-              role="Principal"
-              org="[School Name]"
-            />
-            <TestimonialPlaceholder
-              quote="[PLACEHOLDER] Onboarding our school felt like setting up an online store — it was that straightforward."
-              name="[Name]"
-              role="Director"
-              org="[School Name]"
-            />
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          {/*
+            EARLY TRACTION — honest, real proof points (no fabricated testimonials).
+            TODO (Carlos): once schools are live and willing to be named, add real
+            quotes here using the <TestimonialPlaceholder /> component, e.g.:
+              <TestimonialPlaceholder quote="…" name="…" role="…" org="…" />
+          */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              "X organizations onboarded",
-              "X students managed",
-              "X in payments processed",
-            ].map((stat) => (
+              {
+                stat: "EDHydra",
+                label:
+                  "Our flagship platform is live and onboarding its first K–12 schools right now.",
+              },
+              {
+                stat: "Church tech",
+                label:
+                  "We built an ATH Móvil → Planning Center Giving integration for Iglesia Cristiana Casa de Bendición.",
+              },
+              {
+                stat: "US + LATAM",
+                label:
+                  "Bilingual by default — we serve operators in English and Spanish across both markets.",
+              },
+            ].map((item) => (
               <div
-                key={stat}
-                className="font-mono text-[10px] tracking-[1.5px] uppercase text-gray-400 bg-gray-50 border border-gray-100 px-4 py-2 rounded-full"
+                key={item.stat}
+                className="bg-gray-50 rounded-xl p-6 border border-gray-100"
               >
-                [PLACEHOLDER] {stat}
+                <p className="text-lg font-bold text-gray-900 mb-2">
+                  {item.stat}
+                </p>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {item.label}
+                </p>
               </div>
             ))}
           </div>
